@@ -14,9 +14,20 @@ class KeyPressTracker:
 
         pygame.mixer.init()
         os.system('cls' if os.name == 'nt' else 'clear')
+        print("""
+  ______               ____  _         _ 
+ |  ____|             |  _ \(_)       | |
+ | |__ _ __ ___  ___  | |_) |_ _ __ __| |
+ |  __| '__/ _ \/ _ \ |  _ <| | '__/ _` |
+ | |  | | |  __/  __/ | |_) | | | | (_| |
+ |_|  |_|  \___|\___| |____/|_|_|  \__,_|
+                                         
+                                         
+              """)
         print("The sword is yours, pilot.")
         print("We are stronger united.")
         print("Free Bird systems are online. Eject to activate.")
+        print("")
 
   def resource_path(self, relative_path):
       """ Get absolute path to resource, works for dev and for PyInstaller """
