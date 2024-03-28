@@ -11,6 +11,7 @@ class KeyPressTracker:
         self.within_seconds = within_seconds
         self.sound_file = self.resource_path(sound_file)
         self.pressed_times = []
+        self.volume = 1.0
 
         pygame.mixer.init()
         os.system('cls' if os.name == 'nt' else 'clear')
@@ -39,6 +40,19 @@ class KeyPressTracker:
 
       return os.path.join(base_path, relative_path)
 
+  def set_volume(self, volume_percent):
+        # Remove the percent sign and convert to float
+        volume_percent = float(volume_percent.rstrip('%'))
+
+        # Convert to a value between 0.0 and 1.0
+        self.volume = volume_percent / 100.0
+
+        # Set the volume
+        pygame.mixer.music.set_volume(self.volume)
+        
+        # Print the volume
+        print("Volume set to: " + str(volume_percent) + "%")
+        
   def track(self, e):
     self.pressed_times.append(time.time())
     self.pressed_times = [t for t in self.pressed_times if time.time() - t <= self.within_seconds]
@@ -46,6 +60,7 @@ class KeyPressTracker:
     if len(self.pressed_times) >= self.count:
       pygame.mixer.music.load(self.sound_file)
       pygame.mixer.music.play()
+      pygame.mixer.music.set_volume(self.volume)
       print("Free Bird Initiated. Eject imminent.")
       time.sleep(10)
       pygame.mixer.music.stop()
@@ -56,4 +71,9 @@ keyboard.on_press_key(tracker.key, tracker.track)
 
 # block forever
 while True:
-  time.sleep(1)
+    user_input = input()
+    if user_input.startswith('volume '):
+        tracker.set_volume(user_input.split(' ')[1])
+    else:
+        print("Invalid command. Please enter a valid command.")
+    time.sleep(1)
