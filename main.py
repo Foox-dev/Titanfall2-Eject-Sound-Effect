@@ -13,6 +13,10 @@ class KeyPressTracker:
         self.pressed_times = []
 
         pygame.mixer.init()
+        os.system('cls' if os.name == 'nt' else 'clear')
+        print("The sword is yours, pilot.")
+        print("We are stronger united.")
+        print("Free Bird systems are online. Eject to activate.")
 
   def resource_path(self, relative_path):
       """ Get absolute path to resource, works for dev and for PyInstaller """
@@ -31,7 +35,7 @@ class KeyPressTracker:
     if len(self.pressed_times) >= self.count:
       pygame.mixer.music.load(self.sound_file)
       pygame.mixer.music.play()
-      print("Free Bird")
+      print("Free Bird Initiated. Eject imminent.")
       time.sleep(10)
       pygame.mixer.music.stop()
       self.pressed_times.clear()
