@@ -14,10 +14,6 @@ This project is a standalone executable that enhances your gaming experience. Wh
 2. Run the executable in the background while playing the game.
 3. Enjoy the custom sound effect when you eject from a titan!
 
-## Compiling the Source Code
-
-To compile the source code into an executable file, you'll need Python and either PyInstaller or its graphical alternative, auto-py-to-exe. Here are the steps for both methods:
-
 ## Dependencies
 
 This project requires the following Python libraries:
@@ -26,6 +22,10 @@ This project requires the following Python libraries:
 - pygame
 
 You can install these libraries using pip:
+
+## Compiling the Source Code
+
+To compile the source code into an executable file, you'll need Python and either PyInstaller or its graphical alternative, auto-py-to-exe. Here are the steps for both methods:
 
 ```bash
 pip install keyboard pygame
