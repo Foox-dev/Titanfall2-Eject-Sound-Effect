@@ -10,7 +10,7 @@ This project is a standalone executable that enhances your gaming experience. Wh
 
 ## How to Use
 
-1. Download the executable from the [releases page](https://github.com/Foox-dev/freebird-titanfall2/releases).
+1. Download the executable from the [releases page](https://github.com/Foox-dev/Titanfall2-Eject-Sound-Effect/releases).
 2. Run the executable in the background while playing the game.
 3. Enjoy the custom sound effect when you eject from a titan!
 
